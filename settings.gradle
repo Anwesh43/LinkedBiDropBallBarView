@@ -1,0 +1,3 @@
+include ':bidropbarballview'
+include ':app'
+rootProject.name = "LinkedBiDropBallBarView"
