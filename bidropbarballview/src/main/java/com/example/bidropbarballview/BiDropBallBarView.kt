@@ -20,7 +20,7 @@ val colors : Array<Int> = arrayOf(
 }.toTypedArray()
 val backColor : Int = Color.parseColor("#BDBDBD")
 val barHFactor : Float = 11.2f
-val ballRFactor : Float = 5.9f
+val ballRFactor : Float = 15.3f
 val delay : Long = 20
 val parts : Int = 4
 val scGap : Float = 0.02f / parts
@@ -44,16 +44,16 @@ fun Canvas.drawBiDropBallBar(scale : Float, w : Float, h : Float, paint : Paint)
         save()
         scale(1f - 2 * j, 1f)
         translate(-w / 2 + (w / 2 - ballR) * sf4, -h / 2 + ballR + (h - 2 * ballR) * sf3)
-        drawCircle(0f, 0f, ballR * sf2, paint)
+        drawCircle(ballR, 0f, ballR * sf2, paint)
         restore()
     }
     save()
     translate(0f, h / 2 - barH)
     drawRect(
         RectF(
-            -(w / 2 - ballR) * sf1,
+            -(w / 2 -  2 * ballR) * (sf1 - sf4),
                 0f,
-            (w / 2 - ballR) * sf1,
+            (w / 2 - 2 * ballR) * (sf1 - sf4),
                 barH
         ),
         paint
